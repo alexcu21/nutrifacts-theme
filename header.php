@@ -18,7 +18,7 @@
 </head>
 <body <?php body_class(); ?>>
 <header>
-		<nav class="container-fluid navbar navbar-ct-transparent navbar-expand-lg fixed-top" role="navigation-demo" id="demo-navbar">
+		<nav class="container-fluid navbar navbar-ct-transparent navbar-expand-lg" role="navigation-demo" id="demo-navbar">
             <div class="container wrapper-nav">
             <a class="navbar-brand" href="<?php echo esc_url( home_url('/') ); ?>">
 

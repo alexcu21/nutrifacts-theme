@@ -1,5 +1,16 @@
 <?php
 
+
+/*
+* CMB2
+*/
+require_once dirname(__FILE__) . '/cmb2/init.php';
+
+/*
+* Theme's options
+*/
+require_once dirname(__FILE__) . '/inc/options.php';
+
 /*
 * Load queries
 */
