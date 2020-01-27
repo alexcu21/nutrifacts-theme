@@ -13,10 +13,12 @@
 	<div class="row">
     <?php
 
+        $options = get_option( 'nf_theme_options' );
+
         if(isset($options['number_products'])){
-            $number_projects = (int)$options['number_products'];
+            $number_products = (int)$options['number_products'];
         } else{
-            $number_projects = 6;
+            $number_products = 6;
         }
         nf_query_products($number_products); 
 

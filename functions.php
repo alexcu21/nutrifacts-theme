@@ -7,14 +7,16 @@
 require_once dirname(__FILE__) . '/cmb2/init.php';
 
 /*
+* Load queries
+*/
+require_once dirname(__FILE__) . '/inc/queries.php';
+
+/*
 * Theme's options
 */
 require_once dirname(__FILE__) . '/inc/options.php';
 
-/*
-* Load queries
-*/
-require_once dirname(__FILE__) . '/inc/queries.php';
+
 
 /*
 * styles and script functions
@@ -80,4 +82,35 @@ function ap_li_class($classes, $item, $args){
     return $classes;
 }
 add_filter('nav_menu_css_class', 'ap_li_class', 10, 3 );
+
+/*
+*
+* featured images for pages
+*
+ */
+add_action('init', 'nf_featured_image');
+function nf_featured_image($id){
+  $image = get_the_post_thumbnail_url($id, 'full');
+
+  $html = '';
+  $class = false;
+  if($image){
+    $class = true;
+    $html .= '<div class="container">';
+    $html .= '<div class="row featured-image"></div>';
+    $html .= '</div>';
+
+    // add inline Styles
+    wp_register_style('custom', false);
+    wp_enqueue_style('custom');
+    //css for custom
+    $featured_image_css = "
+      .featured-image{
+        background-image: url({$image});
+      }
+     ";
+     wp_add_inline_style('custom', $featured_image_css);
+  }
+  return array($html, $class);
+}
 

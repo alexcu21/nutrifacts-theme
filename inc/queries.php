@@ -4,10 +4,10 @@
 * function for products queries
  */
 
-function nf_query_products($cant = -1){
+function nf_query_products($cant){
   $args = array(
     'post_type' => 'products',
-    'posts_per_page' => $cant
+    'posts_per_page' => $cant,
   );
 
   $products = new WP_Query($args);
@@ -38,10 +38,10 @@ endwhile; wp_reset_postdata();
 * function for brand queries
  */
 
-function nf_query_brands($cant = -1){
+function nf_query_brands($cant){
     $args = array(
       'post_type' => 'brands',
-      'posts_per_page' => $cant
+      'posts_per_page' => $cant,
     );
   
     $brands = new WP_Query($args);
