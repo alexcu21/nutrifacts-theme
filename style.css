@@ -16,3 +16,17 @@
     color:#66615b;
 
 }
+
+.section-dark{
+    background-color: #3f3f3f;
+}
+
+footer {
+    min-height: 5rem!important;
+    margin-top: 30px;
+}
+
+
+footer .container {
+    padding: 31px;
+}
