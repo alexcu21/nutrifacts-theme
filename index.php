@@ -4,7 +4,6 @@
 
 ?>
 
-
 <!-- <section> products list -->
 
 <section class="products">
