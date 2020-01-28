@@ -35,10 +35,11 @@ function nft_scripts() {
      wp_enqueue_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', array('jquery'), '1.0', true );
      wp_enqueue_script('bootstrap-js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array('jquery'), '1.0', true );
      wp_enqueue_script('ct-paper-js', get_stylesheet_directory_uri() . '/js/vendor/ct-paper.js', array('bootstrap-js'), '1.0', true );
+     wp_enqueue_script('nf-scripts', get_stylesheet_directory_uri() . '/js/nf-scripts.js', array(), '1.0', true );
 }
 add_action('wp_enqueue_scripts', 'nft_scripts' );
 
-function ap_setup(){
+function nf_setup(){
     //size of thumbnails
     add_image_size('medium', 510, 340, true);
     add_image_size('square_medium', 350, 350, true);
@@ -55,33 +56,33 @@ function ap_setup(){
       ));
   }
   
-  add_action('after_setup_theme','ap_setup');
+  add_action('after_setup_theme','nf_setup');
 
 /*
 * adding bootstrap class link
 */
 
-function ap_link_class($atts, $item, $args){
+function nf_link_class($atts, $item, $args){
     if($args->theme_location == 'main_menu') {
          $atts['class'] = 'nav-link';
 
     }
     return $atts;
 }
-add_filter('nav_menu_link_attributes', 'ap_link_class', 10, 3 );
+add_filter('nav_menu_link_attributes', 'nf_link_class', 10, 3 );
 
 /*
 * adding bootstrap class ul > li
 */
 
-function ap_li_class($classes, $item, $args){
+function nf_li_class($classes, $item, $args){
     if($args->add_li_class) {
          $classes[] = $args->add_li_class;
 
     }
     return $classes;
 }
-add_filter('nav_menu_css_class', 'ap_li_class', 10, 3 );
+add_filter('nav_menu_css_class', 'nf_li_class', 10, 3 );
 
 /*
 *

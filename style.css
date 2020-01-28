@@ -30,3 +30,18 @@ footer {
 footer .container {
     padding: 31px;
 }
+
+
+nav#navbarNav a {
+    color: #fff;
+}
+
+.navbar-nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.navbar-nav ul li{
+    padding: 2rem;
+}
